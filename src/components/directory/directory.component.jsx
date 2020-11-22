@@ -11,7 +11,7 @@ const Directory = () => {
         title: 'hats',
         imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
         id: 1,
-        linkUrl: 'shop/hats'
+        linkUrl: 'shop/hats',
       },
       {
         title: 'jackets',
@@ -44,8 +44,8 @@ const Directory = () => {
 
     return (
       <div className="directory-menu">
-        {sections.map(({ title, imageUrl, size, id, linkUrl }) => {
-          return <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+        {sections.map(({ id, ...otherSectionProps }) => {
+          return <MenuItem key={id} {...otherSectionProps} />
         })}
       </div>
     )
