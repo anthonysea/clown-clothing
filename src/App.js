@@ -28,7 +28,6 @@ function App() {
             }
           });
         });
-        console.log(state);
       } else {
         setState({ currentUser: null })
       }
