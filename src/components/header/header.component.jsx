@@ -1,8 +1,8 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'; // HoC that takes a mapping object and the original component
 
 import { auth } from '../../firebase/firebase.utils';
-
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 
@@ -36,5 +36,10 @@ const Header = ({ currentUser }) => {
     )
 }
 
+// Used anywhere we need state from the root reducer
+const mapStateToProps = state => ({ // top level root-reducer state
+    currentUser: state.user.currentUser
+});
 
-export default Header;
+
+export default connect(mapStateToProps)(Header);
