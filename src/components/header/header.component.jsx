@@ -4,11 +4,13 @@ import { connect } from 'react-redux'; // HoC that takes a mapping object and th
 
 import { auth } from '../../firebase/firebase.utils';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 
 import './header.styles.scss'
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
 
     return (
         <div className='header'>
@@ -30,15 +32,20 @@ const Header = ({ currentUser }) => {
                         SIGN IN
                     </Link>
                 }
-                
+                <CartIcon/>
             </div>
+            {
+                hidden ? null :
+                <CartDropdown />
+            }
         </div>
     )
 }
 
 // Used anywhere we need state from the root reducer
-const mapStateToProps = state => ({ // top level root-reducer state
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({ // top level root-reducer state
+    currentUser,
+    hidden
 });
 
 
