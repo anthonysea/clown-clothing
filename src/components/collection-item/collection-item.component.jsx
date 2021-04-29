@@ -2,7 +2,7 @@ import { React } from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
 
-import { CollectionItemContainer, BackgroundImage, CollectionFooterContainer, NameContainer, PriceContainer, AddButton } from './collections-item.styles';
+import { CollectionItemContainer, BackgroundImage, CollectionFooterContainer, NameContainer, PriceContainer, AddButton } from './collection-item.styles';
 
 const CollectionItem = ({ item, addItem }) => {
     const { name, imageUrl, price } = item;
