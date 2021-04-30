@@ -32,9 +32,8 @@ function App(props) {
               ...snapshot.data()
           });
         });
-      } else {
-        setCurrentUser(userAuth)
       }
+      setCurrentUser(userAuth);
     });
 
     return () => {
@@ -56,7 +55,7 @@ function App(props) {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 })
 
 const mapDispatchToProps = dispatch => ({
