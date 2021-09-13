@@ -1,9 +1,24 @@
-# Mock E-Commerce Web Application built with React, Redux, React-Router, Firebase, and Stripe
+# Clown Clothing
+Mock E-Commerce Web Application built with React, Redux, React-Router, Firebase, and Stripe
 
-## Available Scripts
+## Installation
 
-### `npm run start`
+Install with package manager of choice, I used npm:
 
-### `npm run build`
+`npm install`
 
-### `npm run test`
+## Usage
+
+To start the local development server:
+
+`npm run start`
+
+To build the project for deployment:
+
+`npm run build`
+
+## To-do
+
+- Create unit tests
+- Convert to Typescript
+
